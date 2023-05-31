@@ -2,9 +2,9 @@
 #include <vector>
 #include <queue>
 
-std::vector<std::vector<int>> v(50, std::vector<int>(50));
-bool check[50][50];
-int dx[8] = { -1, -1, -1, 0, 0, 1, 1, 1 };
+std::vector<std::vector<int>> v(50, std::vector<int>(50)); // 50x50 행렬 생성
+bool check[50][50]; // 방문했는지 check
+int dx[8] = { -1, -1, -1, 0, 0, 1, 1, 1 }; // dx와 dy의 순서쌍 형식으로 8방향 모두의 node를 탐색(중요)
 int dy[8] = { -1, 0, 1, -1, 1, -1, 0, 1 };
 int NumofIsl = 0;
 int w, h;
