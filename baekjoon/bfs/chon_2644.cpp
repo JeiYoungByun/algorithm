@@ -23,6 +23,8 @@ int main(){
     bfs(a, b);
 
     std::cout<<depth[b]<<std::endl;
+
+    return 0;
 }
 
 void bfs(int alpha, int beta){
