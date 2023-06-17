@@ -47,20 +47,28 @@ int Median(vector<int>& A, int l, int r) {
 }
 
 void Qsort(vector<int>& A, int l, int r) {
-    if (r - l < 1) return;
+    while (l < r) {
+        int pivot = Median(A, l, r);
+        int i = l, j = r - 1;
 
-    int pivot = Median(A, l, r);
-    int i = l, j = r - 1;
+        while (true) {
+            while (i < r && A[++i] < pivot);
+            while (j > l && A[--j] > pivot);
+            if (i < j) Swap(A[i], A[j]);
+            else break;
+        }
 
-    while (true) {
-        while (i < r && A[++i] < pivot);
-        while (j > l && A[--j] > pivot);
-        if (i < j) Swap(A[i], A[j]);
-        else break;
+        if (i < r - 1) Swap(A[i], A[r - 1]);
+
+        // Recur for the smaller subarray, and adjust the bounds of the larger subarray.
+        if (i - l < r - i) {
+            Qsort(A, l, i - 1);
+            l = i + 1;
+        } else {
+            Qsort(A, i + 1, r);
+            r = i - 1;
+        }
     }
-
-    if (i < r - 1) Swap(A[i], A[r - 1]);
-    Qsort(A, l, i - 1);
-    Qsort(A, i + 1, r);
 }
+
 
