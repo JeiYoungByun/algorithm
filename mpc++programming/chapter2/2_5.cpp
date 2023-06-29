@@ -10,5 +10,5 @@ int main(){
     for(int i=0; i<100; i++){
         if(A[i]=='x') Findx += 1;
     }
-    cout<<"x의 개수는 "<<Findx<<'\n';
+    cout<<"x의 개수는  "<<Findx<<'\n';
 }
