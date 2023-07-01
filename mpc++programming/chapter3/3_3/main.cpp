@@ -1,4 +1,4 @@
-//¾È
+
 #include <iostream>
 #include <vector>
 #include "Account.h"
