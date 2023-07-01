@@ -27,7 +27,7 @@ public:
 
     }
     void show(){
-        cout<<year<<"³â"<<month<<"¿ù"<<day<<"ÀÏ\n";
+        cout<<year<<"/"<<month<<"/"<<day<<"\n";
     }
     int getYear(){
         return year;
