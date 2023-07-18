@@ -1,4 +1,4 @@
-#include "Book(not_using_string_ver).h"
+#include "Book(with_string).h"
 
 int main(){
     Book cpp("MPC++", 10000);
