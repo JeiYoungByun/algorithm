@@ -1,20 +1,18 @@
-n = int(input())
+from collections import Counter
 
+n = int(input())
 items = list(map(int, input().split()))
 
-freq = {}
+freq = Counter(items)  # 빈도수 자동 계산
 
-for item in items:
-    if item in freq:
-        freq[item] += 1
-    else:
-        freq[item] = 1
+# 최빈값 찾기
+max_freq = freq.most_common(1)[0][1]  # 가장 많이 나온 횟수
 
-max_item = max(freq.values())
-
-output = sorted(k for k in freq.keys() if freq[k] == max_item)
+# 최빈값과 같은 빈도를 가진 숫자들을 정렬하여 출력
+output = sorted(k for k, v in freq.items() if v == max_freq)
 
 print(" ".join(map(str, output)))
+
 
 
 
